@@ -74,13 +74,13 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                 print("Error saving comment")
             }
         }
-        
+        tableView.reloadData()
         //clear and dismiss the inout bar
         commentBar.inputTextView.text = nil
         showsCommentBar = false
         becomeFirstResponder()
         commentBar.inputTextView.resignFirstResponder()
-        tableView.reloadData()
+        //tableView.reloadData()
     }
     
     
@@ -90,7 +90,9 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         return comments.count + 2
     }
     
-    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return posts.count
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let post = posts[indexPath.section]
         let comments = (post["comments"] as? [PFObject]) ?? []

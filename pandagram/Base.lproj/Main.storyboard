@@ -255,7 +255,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="+" image="insta_camera_btn" id="SLe-Va-pWi">
                             <connections>
-                                <segue destination="1Nq-jV-F2K" kind="presentation" modalPresentationStyle="fullScreen" id="DAu-lD-jeo"/>
+                                <segue destination="1Nq-jV-F2K" kind="presentation" identifier="cameraSegue" modalPresentationStyle="fullScreen" id="DAu-lD-jeo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
